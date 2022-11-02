@@ -5,9 +5,9 @@
 }
 
 h2 {
-    font-family: 'Space Mono', monospace;
+    font-family: monospace;
     color: white;
-    font-size: 2.5vw;
+    font-size: 200%;
     text-align: center;
 }
 
@@ -17,15 +17,24 @@ input[type=text]{
     border-style:dashed;
     border-color:white;
     padding:12px;
+    width: 100%;
+    font-family: monospace;
+}
+
+input[type=submit]{
+    background: black;
+    color: white;
+    border-style:dashed;
+    border-color:white;
+    padding:12px;
+    float: right;
+    font-family: monospace;
 }
 
 body {
     background-color: black;
 }
 
-.mailingListForm{
-    max-width: fit-content;
-}
 
 .Header{
     display: grid;
@@ -43,8 +52,31 @@ body {
 }
 
 .headerText{
-    font-family: 'Space Mono', monospace;
+    font-family: monospace;
     position: absolute;
     left:50%;
     transform: translate(-50%, -0%);
 }
+
+label{
+    color: white;
+    font-family: monospace;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    color:white;
+    font-family: monospace;
+    font-size: 18px;
+  }
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .Space{
+    height:50px;
+  }
