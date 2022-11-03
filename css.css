@@ -63,6 +63,8 @@ label{
     font-family: monospace;
 }
 
+/* Row and column styling based on code from https://www.w3schools.com/howto/howto_css_three_columns.asp */
+
 .column {
     float: left;
     width: 33.33%;
