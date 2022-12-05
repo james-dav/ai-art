@@ -1,28 +1,45 @@
-var slider = document.getElementById("dateSelector");
+// document.addEventListener("DOMContentLoaded",function(){
+//   let thumbnail = document.getElementById('thumbnail');
+//   thumbnail.addEventListener("mouseover", function(event){
+//   changeImage(event)});
+// })
 
-// Update the current slider value (each time you drag the slider handle)
+const { Configuration, OpenAIApi } = require("openai");
+const configuration = new Configuration({
+  apiKey: process.env.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,
+});
+const openai = new OpenAIApi(configuration);
+const response = await openai.createImage({
+  prompt: "A cute baby sea otter",
+  n: 1,
+  size: "1024x1024",
+});
 
-import ds1 from './assets/uk_interest_AI-Art.json' assert { type: 'json' };
-// console.log(ds1);
-document.addEventListener("DOMContentLoaded", function () {
-const ctx = document.getElementById("chart1");
-const chart1 = new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
-    datasets: [{ 
-        data: [86,114,106,106,107,111,133,221,783,2478],
-        label: "Africa",
-        borderColor: "#3e95cd",
-        fill: false
-      }
-    ]
-  },
-  options: {
-    title: {
-      display: true,
-      text: 'World population per region (in millions)'
-    }
-  }
-});
-});
+document.getElementById('aiIMG').src=response.data.data[0].url;
+
+
+
+const thumbnails = document.querySelectorAll('#thumbnail');
+thumbnails.forEach(tn => {
+  tn.addEventListener("mouseover", function(evt){
+    changeImage(evt)
+  })});
+
+function changeImage(evt){
+
+  const links = [
+    "url(/assets/header.png)",
+    "url(/assets/landscape.jpeg)",
+    "url(/assets/image3.jpeg)",
+    "url(/assets/image4.webp)"
+  ]
+
+  let activeTn = evt.target.attributes.itemid.nodeValue;
+  let header_image = document.getElementById('headerImage');
+  header_image.style.backgroundImage = links[+activeTn-1];
+  console.log(activeTn);
+  //var currentOpacity = window.getComputedStyle(header_image).opacity;
+  //console.log(currentOpacity);
+  //header_image.classList.toggle("transparent")
+}
+

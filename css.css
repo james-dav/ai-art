@@ -10,9 +10,46 @@ body {
   overflow: hidden;
   background-image: url("/assets/header.png");
   background-repeat: no-repeat;
-  background-position: center; 
+  background-position: center;
+  transition: opacity 1s; 
 }
 
 #title-text{
   transform: translateY(-600px);
+  transition: transform 0.5s;
+  position: absolute;
+}
+#subtitle-text{
+  transform: translateY(-500px);
+  transition: transform 0.5s;
+  position: absolute;
+}
+
+#thumbnail{
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  transition: transform 0.5s;
+  
+}
+
+#thumbnail:hover{
+  opacity: 0.5;
+  transform: scale(1.1);
+}
+
+img{
+  object-fit:cover;
+  height:100%;
+  width:100%;
+}
+
+#tpdne{
+  border: 1px lightgray;
+  border-radius: 25px;
+}
+
+.transparent{
+  opacity:0;
 }

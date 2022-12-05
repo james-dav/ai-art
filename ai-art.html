@@ -10,6 +10,8 @@
 
     <title>AI Art</title>
 
+    
+
     <!--Implementing Bootsrap: https://getbootstrap.com/ -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="css.css">
@@ -17,34 +19,82 @@
 </head>
 
 <body>
-
+<!--Nav Bar-->
+<nav class="navbar fixed-top">
+    <div class="container-xxl">
+        <button class="navbar-toggler border-0 " type="button" data-bs-toggle="collapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
 
 <!-- Header-->
 
-<div class="header-image"></div>
+<div class="header-image" id="headerImage"></div>
 <div class="container">
-<h1 id="title-text" class="display-6 font-monospace text-white text-center">The Next Step in Art & Technology</h1>
-<h1 id="title-text" class="display-1 text-white text-center fw-bold">Art created by Artificial Intelligence</h1>
+<h1 id="title-text" class="display-6 font-monospace text-white text-center text-sm-start">The Next Step in Art & Technology</h1>
+<h1 id="subtitle-text" class="display-1 text-white text-center fw-bold text-sm-start">Art created by Artificial Intelligence</h1>
 </div>
 
-    <div class="container m-5">
-        <div class="row justify-content-center">
-            <div class="col">
-                <button type="button" class="btn btn-outline-dark">Button 1</button>
+<div class="container-md m-5 p-5">
+    <div class="row justify-content-center">
+        <div class="col">
+            <div class="container">
+                <img itemid="1" id="thumbnail" src="/assets/header.png"></img>
             </div>
-            <div class="col">
-                <button type="button" class="btn btn-outline-dark">Button 2</button>
+        </div>
+        <div class="col">
+            <div class="container">
+                <img itemid="2" id="thumbnail" src="/assets/header.png"></img>
             </div>
-            <div class="col">
-                <button type="button" class="btn btn-outline-dark">Button 3</button>
+        </div>
+        <div class="col">
+            <div class="container">
+                <img itemid="3" id="thumbnail" src="/assets/header.png"></img>
+            </div>
+        </div>
+        <div class="col">
+            <div class="container">
+                <img itemid="4" id="thumbnail" src="/assets/header.png"></img>
             </div>
         </div>
     </div>
+</div>
 
- <!-- This Person Does Not Exist Image-->
-    <div class="person">
-    <iframe width="100%" height="500px" src="/assets/tpdne.html"></iframe>
+<img id="aiIMG"></img>
+
+<!--Intro-->
+<div class="container-md mt-5 pt-5">
+    <div class="display-2 text-muted fw-bold text-center m-5" id="artAndComputers">Art and Computers</div>
+    <div class="display-6 text-muted m-5 p-3 rounded">Computers have been involved in the creation of art for decades but in recent years there has been a huge development of their role in the creative process. The dawn of artificial intelligence and machine learning holds the key to untold possibilities due to its seemingly limitless number of applications. One such application, that yields stunning results, is the creation of images. </div>
+</div>
+
+<!--DeepDream-->
+<div class="container-md">
+    <div class="row">
+        <div class="display-2 text-muted fw-bold text-center m-5" id="deepDream">Deep Dream</div>
+        <div class="col-xl-6">
+            <div class="display-6 text-muted m-5 p-3 rounded">DeepDream is a tool created by Google engineer Alexander Mordvintsev initially to help researchers understand how neural networks perceive images. The program was trained to detect patterns such as faces or animals and enhance them. The psychedelic images created by DeepDream exploded in popularity on the internet in mid-2015. </div>
+        </div>
+        <div class="col-xl-6 p-5">
+            <img src="/assets/deep_dream.jpeg"></img>
+        </div>
     </div>
+</div>
+
+<!--GANs-->
+
+<div class="container-md">
+    <div class="row">
+        <div class="display-2 text-muted fw-bold text-center m-5" id="gans">GANs</div>
+        <div class="col-xl-6">
+            <div class="display-6 text-muted m-5 p-3 rounded">Generative Adversarial Networks came along around a similar time and offered incredible results. These neural networks are trained on a dataset of images of a particular subject (e.g. human faces) and can then generate brand new images of this subject. A popular example is thispersondoesnotexist.com, a site created by researchers which allows users to generate new, realistic human faces. </div>
+        </div>
+        <div class="col-xl-6">
+            <iframe width="100%" height="700px" src="/assets/tpdne.html"></iframe>
+        </div>
+    </div>
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script type="module" src="index.js"></script>
